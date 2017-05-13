@@ -19,6 +19,8 @@
 
 @property (nonatomic,strong) WKWebView *webView;
 
+@property (nonatomic,strong) NSString *videoUrl;
+
 @end
 
 @implementation YouTuBePlayerView
@@ -137,6 +139,15 @@
 
     NSDictionary *dic = @{@"autoplay":@1,@"controls":@2,@"playsinline":@1,@"origin":YouTubeOrigin};
     return  [self playVideoWithVideoId:videoId playerVars:dic];
+}
+
+/*
+ play video with videoURL
+ **/
+- (BOOL)playVideoWithVideoURL:(NSString *)videoURL {
+    self.videoUrl = videoURL;
+    NSString *videoID = [self getVideoIdFromVideoURL];
+    return [self playVideoWithVideoId:videoID];
 }
 
 /**
@@ -287,6 +298,16 @@
 }
 
 
-
+- (NSString *)getVideoIdFromVideoURL {
+    NSString *videoId;
+    NSString *searchedString = self.videoUrl;
+    NSRange searchRange = NSMakeRange(0, [searchedString length]);
+    NSString *pattern = @"(youtu(?:\\.be|be\\.com)\\/(?:.*v(?:\\/|=)|(?:.*\\/)?)([\\w'-]+))";
+    NSError *error = nil;
+    NSRegularExpression *regex = [NSRegularExpression regularExpressionWithPattern:pattern options:0 error:&error];
+    NSTextCheckingResult *match = [regex firstMatchInString:searchedString options:0 range:searchRange];
+    videoId = [searchedString substringWithRange:[match rangeAtIndex:2]];
+    return  videoId;
+}
 
 @end

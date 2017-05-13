@@ -80,6 +80,13 @@ typedef NS_ENUM(NSInteger,PlayerState) {
  play video with videoId
  **/
 - (BOOL)playVideoWithVideoId:(NSString *)videoId;
+
+
+/*
+ play video with videoURL
+ **/
+- (BOOL)playVideoWithVideoURL:(NSString *)videoURL;
+
 /*
  play video with videoId and playerVars
  **/
