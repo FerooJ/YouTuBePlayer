@@ -1,2 +1,4 @@
 # YouTuBePlayer
 用WKWebView实现YouTuBe视频播放
+
+YouTuBe视频播放的官方demo是采用UIWebView加载HTML实现的，我们都清楚UIWebView的性能问题不好解决，在iOS8之后苹果推出的WKWebView可以极大地节省内存，不过关于其使用，有很多坑，那么，笔者在开发到相关工程的时候就想到如何采用WKWebView去实现播放YouTuBe视频呢，经过一番研究，封装了一个实现WKWebView播放YouTuBe视频的工具类，以供有相似功能开发的人来一起研究学习，笔者后续会继续更新代码，有写的不对的地方，欢迎同胞们指出，大家一同共同进步
