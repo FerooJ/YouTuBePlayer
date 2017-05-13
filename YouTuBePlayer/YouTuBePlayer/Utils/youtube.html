@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+    <title>WaNews</title>
+    <style>
+        body { margin: 0; width:100%%; height:100%%;  background-color:#000000; }
+        html { width:100%%; height:100%%; background-color:#000000; }
+        
+        .embed-container iframe,
+        .embed-container object,
+        .embed-container embed {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%% !important;
+            height: 100%% !important;
+        }
+    </style>
+
+</head>
+<body>
+<!--< iframe >（视频播放器）将取代这<DIV>标签.-->
+<div class="embed-container">
+    <div id="player"></div>
+</div>
+<!--<script src="js/jquery-2.1.3.min.js?v=20160308"></script>-->
+<script>
+            //这个代码加载iFrame播放器代码异步API
+            var tag = document.createElement('script');
+            tag.src = "https://www.youtube.com/iframe_api";
+            var firstScriptTag = document.getElementsByTagName('script')[0];
+            firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+            //这个函数创建一个< iframe >（和YouTube播放器）zPUdFID3lmo   M7lc1UVf-VE
+            var player;
+            var errorCode = -1;//用来记录错误码
+            function onYouTubeIframeAPIReady() {
+                player = new YT.Player('player',%@);
+                player.setSize(window.innerWidth, window.innerHeight);
+            }
+            //当视频播放器准备好了API调用此函数。
+            function onPlayerReady(event) {
+                event.target.playVideo();
+                console.log('开始');
+                window.location.href = 'wabridge://onPlayerReady?data=' + event.data;
+            }
+            //当播放器的状态改变时，这个函数调用这个函数
+            var done = false;
+            function onPlayerStateChange(event) {
+                window.location.href = 'wabridge://onPlayerStateChange?data=' + event.data + "&errorCode=" + errorCode;
+            }
+            //此事件在播放器出错时触发。
+            function onPlayerError(event) {
+                console.log('播放失败');
+                    errorCode = event.data;
+                //window.location.href = 'wabridge://onPlayerError?data=' + event.data;
+            }
+</script>
+</body>
+</html>

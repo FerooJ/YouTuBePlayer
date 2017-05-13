@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "YouTuBePlayerView.h"
 
 @interface ViewController ()
 
@@ -17,6 +18,15 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    
+    NSString *videoId = @"M7lc1UVf-VE";
+    
+    YouTuBePlayerView *playerView = [[YouTuBePlayerView alloc] init];
+    playerView.center = self.view.center;
+    playerView.bounds = CGRectMake(0, 0, self.view.bounds.size.width, 200);
+    [playerView playVideoWithVideoId:videoId];
+    
+    [self.view addSubview:playerView];
 }
 
 

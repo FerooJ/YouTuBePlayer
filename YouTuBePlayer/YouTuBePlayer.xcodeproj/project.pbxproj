@@ -14,6 +14,12 @@
 		D011A16E1EC6B46A00B642AA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D011A16D1EC6B46A00B642AA /* Assets.xcassets */; };
 		D011A1711EC6B46A00B642AA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D011A16F1EC6B46A00B642AA /* LaunchScreen.storyboard */; };
 		D011A17B1EC6B6F300B642AA /* YouTuBePlayerView.m in Sources */ = {isa = PBXBuildFile; fileRef = D011A17A1EC6B6F300B642AA /* YouTuBePlayerView.m */; };
+		D011A1851EC6B8D700B642AA /* WebViewJavascriptBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = D011A17E1EC6B8D700B642AA /* WebViewJavascriptBridge.m */; };
+		D011A1861EC6B8D700B642AA /* WebViewJavascriptBridge_JS.m in Sources */ = {isa = PBXBuildFile; fileRef = D011A1801EC6B8D700B642AA /* WebViewJavascriptBridge_JS.m */; };
+		D011A1871EC6B8D700B642AA /* WebViewJavascriptBridgeBase.m in Sources */ = {isa = PBXBuildFile; fileRef = D011A1821EC6B8D700B642AA /* WebViewJavascriptBridgeBase.m */; };
+		D011A1881EC6B8D700B642AA /* WKWebViewJavascriptBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = D011A1841EC6B8D700B642AA /* WKWebViewJavascriptBridge.m */; };
+		D011A18B1EC6BA0600B642AA /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D011A18A1EC6BA0600B642AA /* WebKit.framework */; };
+		D011A18D1EC6D94900B642AA /* youtube.html in Resources */ = {isa = PBXBuildFile; fileRef = D011A18C1EC6D94900B642AA /* youtube.html */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +35,16 @@
 		D011A1721EC6B46A00B642AA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D011A1791EC6B6F300B642AA /* YouTuBePlayerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YouTuBePlayerView.h; sourceTree = "<group>"; };
 		D011A17A1EC6B6F300B642AA /* YouTuBePlayerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YouTuBePlayerView.m; sourceTree = "<group>"; };
+		D011A17D1EC6B8D700B642AA /* WebViewJavascriptBridge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebViewJavascriptBridge.h; sourceTree = "<group>"; };
+		D011A17E1EC6B8D700B642AA /* WebViewJavascriptBridge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebViewJavascriptBridge.m; sourceTree = "<group>"; };
+		D011A17F1EC6B8D700B642AA /* WebViewJavascriptBridge_JS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebViewJavascriptBridge_JS.h; sourceTree = "<group>"; };
+		D011A1801EC6B8D700B642AA /* WebViewJavascriptBridge_JS.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebViewJavascriptBridge_JS.m; sourceTree = "<group>"; };
+		D011A1811EC6B8D700B642AA /* WebViewJavascriptBridgeBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebViewJavascriptBridgeBase.h; sourceTree = "<group>"; };
+		D011A1821EC6B8D700B642AA /* WebViewJavascriptBridgeBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebViewJavascriptBridgeBase.m; sourceTree = "<group>"; };
+		D011A1831EC6B8D700B642AA /* WKWebViewJavascriptBridge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WKWebViewJavascriptBridge.h; sourceTree = "<group>"; };
+		D011A1841EC6B8D700B642AA /* WKWebViewJavascriptBridge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WKWebViewJavascriptBridge.m; sourceTree = "<group>"; };
+		D011A18A1EC6BA0600B642AA /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
+		D011A18C1EC6D94900B642AA /* youtube.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = youtube.html; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -36,6 +52,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D011A18B1EC6BA0600B642AA /* WebKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -47,6 +64,7 @@
 			children = (
 				D011A1601EC6B46A00B642AA /* YouTuBePlayer */,
 				D011A15F1EC6B46A00B642AA /* Products */,
+				D011A1891EC6BA0600B642AA /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -86,10 +104,35 @@
 		D011A1781EC6B65D00B642AA /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				D011A18C1EC6D94900B642AA /* youtube.html */,
+				D011A17C1EC6B8D700B642AA /* WebViewJavascriptBridge */,
 				D011A1791EC6B6F300B642AA /* YouTuBePlayerView.h */,
 				D011A17A1EC6B6F300B642AA /* YouTuBePlayerView.m */,
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		D011A17C1EC6B8D700B642AA /* WebViewJavascriptBridge */ = {
+			isa = PBXGroup;
+			children = (
+				D011A17D1EC6B8D700B642AA /* WebViewJavascriptBridge.h */,
+				D011A17E1EC6B8D700B642AA /* WebViewJavascriptBridge.m */,
+				D011A17F1EC6B8D700B642AA /* WebViewJavascriptBridge_JS.h */,
+				D011A1801EC6B8D700B642AA /* WebViewJavascriptBridge_JS.m */,
+				D011A1811EC6B8D700B642AA /* WebViewJavascriptBridgeBase.h */,
+				D011A1821EC6B8D700B642AA /* WebViewJavascriptBridgeBase.m */,
+				D011A1831EC6B8D700B642AA /* WKWebViewJavascriptBridge.h */,
+				D011A1841EC6B8D700B642AA /* WKWebViewJavascriptBridge.m */,
+			);
+			path = WebViewJavascriptBridge;
+			sourceTree = "<group>";
+		};
+		D011A1891EC6BA0600B642AA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D011A18A1EC6BA0600B642AA /* WebKit.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -123,6 +166,7 @@
 				TargetAttributes = {
 					D011A15D1EC6B46A00B642AA = {
 						CreatedOnToolsVersion = 8.3.2;
+						DevelopmentTeam = YKBW8AGZ9Y;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -150,6 +194,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D011A18D1EC6D94900B642AA /* youtube.html in Resources */,
 				D011A1711EC6B46A00B642AA /* LaunchScreen.storyboard in Resources */,
 				D011A16E1EC6B46A00B642AA /* Assets.xcassets in Resources */,
 				D011A16C1EC6B46A00B642AA /* Main.storyboard in Resources */,
@@ -165,8 +210,12 @@
 			files = (
 				D011A1691EC6B46A00B642AA /* ViewController.m in Sources */,
 				D011A1661EC6B46A00B642AA /* AppDelegate.m in Sources */,
+				D011A1861EC6B8D700B642AA /* WebViewJavascriptBridge_JS.m in Sources */,
 				D011A1631EC6B46A00B642AA /* main.m in Sources */,
+				D011A1871EC6B8D700B642AA /* WebViewJavascriptBridgeBase.m in Sources */,
+				D011A1881EC6B8D700B642AA /* WKWebViewJavascriptBridge.m in Sources */,
 				D011A17B1EC6B6F300B642AA /* YouTuBePlayerView.m in Sources */,
+				D011A1851EC6B8D700B642AA /* WebViewJavascriptBridge.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -288,10 +337,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = YKBW8AGZ9Y;
 				INFOPLIST_FILE = YouTuBePlayer/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.liwei.YouTuBePlayer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 			};
 			name = Debug;
 		};
@@ -299,10 +351,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = YKBW8AGZ9Y;
 				INFOPLIST_FILE = YouTuBePlayer/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.liwei.YouTuBePlayer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 			};
 			name = Release;
 		};
