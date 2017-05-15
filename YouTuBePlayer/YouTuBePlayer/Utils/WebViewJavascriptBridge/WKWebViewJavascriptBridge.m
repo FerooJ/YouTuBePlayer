@@ -169,11 +169,7 @@ decisionHandler:(void (^)(WKNavigationActionPolicy))decisionHandler {
     else if ([[url scheme] isEqualToString:urlScheme]) {
         [self handleQuery:url];
         decisionHandler(WKNavigationActionPolicyCancel);
-    }else if ([[url scheme] isEqualToString:@"wanews"]) {
-        [self handleWithURL:url];
-        decisionHandler(WKNavigationActionPolicyCancel);
     }
-    
     else if (strongDelegate && [strongDelegate respondsToSelector:@selector(webView:decidePolicyForNavigationAction:decisionHandler:)]) {
         [_webViewDelegate webView:webView decidePolicyForNavigationAction:navigationAction decisionHandler:decisionHandler];
     } else {

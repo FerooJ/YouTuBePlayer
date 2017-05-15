@@ -25,7 +25,6 @@
     playerView.center = self.view.center;
     playerView.bounds = CGRectMake(0, 0, self.view.bounds.size.width, 200);
     [playerView playVideoWithVideoId:videoId];
-    
     [self.view addSubview:playerView];
 }
 

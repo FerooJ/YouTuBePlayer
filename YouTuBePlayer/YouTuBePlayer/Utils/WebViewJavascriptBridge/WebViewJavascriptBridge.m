@@ -155,6 +155,8 @@
     }
 }
 
+#define urlScheme @"wabridge"
+
 - (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType {
     if (webView != _webView) { return YES; }
     NSURL *url = [request URL];
@@ -170,14 +172,10 @@
         }
         return NO;
     }
-//    else if ([[url scheme] isEqualToString:WaNewsScheme]) {
-//        [self handleQuery:url];
-//        return NO;
-//    } else if ([[url scheme] isEqualToString:@"wanews"]) {
-//        [self handleWithURL:url];
-//        return NO;
-//    }
-    
+    else if ([[url scheme] isEqualToString:urlScheme]) {
+        [self handleQuery:url];
+        return NO;
+    }     
     else if (strongDelegate && [strongDelegate respondsToSelector:@selector(webView:shouldStartLoadWithRequest:navigationType:)]) {
         return [strongDelegate webView:webView shouldStartLoadWithRequest:request navigationType:navigationType];
     } else {
